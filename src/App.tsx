@@ -1,3 +1,4 @@
+// import { BleServiceProvider } from './services/BleService1';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -27,14 +28,20 @@ import Register from './pages/Register';
 import SplashScreen from './pages/SplashScreen/SplashScreen';
 import Login from './pages/Login/login';
 import Signup from './pages/Signup/signup';
+// import newcomp from './pages/newcomp/newcomp';
 import BluetoothScanning from './pages/BluetoothScanning/bluetoothScanning';
 import BluetoothComponent from './pages/BluetoothScanning/bluetoothScanning';
 import Homepage from './pages/Homepage/homepage';
+import AllowBluetoothPermission from './pages/AllowBluetoothPermission/AllowBluetoothPermission';
+import BluetoothDeviceList from './pages/BluetoothDeviceList/BluetoothDeviceList';
+import BluetoothScan from './pages/BluetoothScan/BluetoothScan';
+// import NewComp from './pages/newcomp/newcomp';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+     {/* <BleServiceProvider> */}
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/home">
@@ -70,8 +77,27 @@ const App: React.FC = () => (
         <Route exact path="/homescreen">
           <Homepage/>
         </Route>
+
+        <Route exact path="/newcomp">
+          {/* < NewComp/> */}
+        </Route>
+
+        <Route exact path="/AllowBluetoothPermission">
+        <AllowBluetoothPermission/>
+        </Route>
+
+        <Route exact path="/BluetoothScan">
+          <BluetoothScan/>
+        </Route>
+
+        <Route exact path="/BluetoothDeviceList">
+          <BluetoothDeviceList/>
+        </Route>
+
+
       </IonRouterOutlet>
     </IonReactRouter>
+    {/* </BleServiceProvider> */}
   </IonApp>
 );
 
